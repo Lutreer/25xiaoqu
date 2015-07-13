@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="xueyouApp" xmlns:th="http://www.thymeleaf.org">
+<html ng-app="xueyouApp" xmlns:th="http://www.thymeleaf.org" id="html">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>学友</title>
     <!-- Load CSS files-->
     <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
@@ -10,9 +9,8 @@
     <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="../static/css/customer/common.css" rel="stylesheet" th:href="@{/css/customer/common.css}"/>   
     <link href="../static/css/customer/index.css" rel="stylesheet" th:href="@{/css/customer/index.css}"/>   
-
 </head>
-<body onload="initBody();">
+<body id="body">
 	<header>
 		<nav class="navbar navbar-inverse nav_top navbar-fixed-top top_nav">
 			<div class="container-fluid">
@@ -22,8 +20,13 @@
 			</div>
 		</nav>
 	</header>
-	<div class="col-md-12" data-ui-view=""></div>
-
+	<div class="all_view">
+		<leftnav></leftnav>
+		<div class="col-md-12 data_ui_view" data-ui-view=""></div>
+	</div>
+	<footer>
+		<div class="footer_div" >44444444444444</div>
+	</footer>
 	<!-- 公共提示框 -->
 	<!-- 此处bs-example-modal-lg modal-lg 样式将模态框设置为大框 ，如果为bs-example-modal-sm modal-sm即为小框-->
 	<div class="modal fade bs-example-modal-sm" id="alert_dialog" role="dialog" aria-label="myModalLabel" aria-hidden="true">
@@ -64,10 +67,11 @@
 	<script src="http://cdn.bootcss.com/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="http://cdn.bootcss.com/bootstrap-datepicker/1.4.0/locales/bootstrap-datepicker.zh-CN.min.js"></script>
 	<!-- Load custom js file -->
-	<script src="../static/js/customer/app.js" th:src="@{/js/customer/app.js}"></script>
-	<script src="../static/js/customer/common.js" th:src="@{/js/customer/common.js}"></script>
-	<script src="../static/js/customer/style.js" th:src="@{/js/customer/style.js}"></script>
-	<script src="../static/js/personnel/personnelCtrl.js" th:src="@{/js/personnel/personnelCtrl.js}"></script>
-	<script src="../static/js/personnel/personnelService.js" th:src="@{/js/personnel/personnelService.js}"></script>
+	<script src="../static/js/customer/common/app.js" th:src="@{/js/customer/common/app.js}"></script>
+	<script src="../static/js/customer/common/directive.js" th:src="@{/js/customer/common/directive.js}"></script>
+	<script src="../static/js/customer/common/common.js" th:src="@{/js/customer/common/common.js}"></script>
+	<script src="../static/js/customer/common/style.js" th:src="@{/js/customer/common/style.js}"></script>
+	<!-- <script src="../static/js/personnel/personnelCtrl.js" th:src="@{/js/personnel/personnelCtrl.js}"></script>
+	<script src="../static/js/personnel/personnelService.js" th:src="@{/js/personnel/personnelService.js}"></script> -->
 </body>
 </html>
