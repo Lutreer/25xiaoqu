@@ -10,25 +10,57 @@
 .top_nav{
 	padding-left:30px;
 	border:0px;
+	background-color: #425066;
 }
-.data_ui_view{
+.data_ui_view_class{
 	height:100%;
-	background:#ff8000;
+	background:#ffffff;
+	padding-top:30px;
+	padding-left:50px;
+	padding-right:50px;
+	word-wrap: break-word;
 }
 .all_view{
 	height:100%;
 	overflow:auto;
-	background:#e09e9e;
+	padding-left:0px;
+	padding-right:0px;
 	padding-top:50px;
-	padding-bottom:20px;
 }
+.app_list{
+	height:100%;
+	padding-top:30px;
+	padding-bottom:30px;
+	overflow-y:auto;
+	overflow-x:hidden;
+	background:#eff8f3;
+	word-wrap: break-word;
+	
+	/* scrollbar-face-color: rgba(35, 51, 66, 1);
+    scrollbar-shadow-color: rgba(35, 51, 66, 1);
+    scrollbar-highlight-color: #7d7e94;
+    scrollbar-3dlight-color: #7d7e94;
+    scrollbar-darkshadow-color: #2d2c4d;
+    scrollbar-track-color: rgba(52, 73, 94, 1);
+    scrollbar-arrow-color: red;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+}
+
 footer{
-	height:20px;
+	height:150px;
 	width:100%;
-	background:#41555d;
 	position: fixed;
-	bottom: 0px;
+	bottom: -130px;
+	background:#425066;
+	transition: bottom 1s;
+	-webkit-transition: bottom 1000ms ease-out;
+	-moz-transition: bottom 1s; /* Firefox 4 */
+	-webkit-transition: bottom 1s; /* Safari 和 Chrome */
+	-o-transition: bottom 1s; /* Opera */
 }
 .footer_div{
 	text-align: center;
+}
+footer:hover{
+	bottom:0px;
 }

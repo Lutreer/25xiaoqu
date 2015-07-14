@@ -7,9 +7,6 @@ var windowHeight = $(window).height();
 var windowWidth= $(window).width();
 
 $(function() {
-	//左侧导航高度
-	/*alert(windowHeight);
-	$("body").height(windowHeight);*/
 });
 	
 	
