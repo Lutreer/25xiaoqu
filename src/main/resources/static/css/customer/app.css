@@ -1,0 +1,25 @@
+@charset "utf-8";
+.app{
+	width:80px;
+	height:80px;
+	margin-bottom:20px;
+	margin-left:10px;
+	margin-right:10px;
+	padding:12px;
+	overflow: hidden;
+	outline:none;
+	
+	-webkit-box-shadow: #666 0px 0px 10px;
+	-moz-box-shadow: #666 0px 0px 10px;
+	box-shadow: #666 0px 0px 10px;
+}
+.app div{
+	width:54px;
+	height:54px;
+	line-height:54px;
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-break:break-all !important;
+}
