@@ -5,8 +5,8 @@
     <title>xxxx</title>
     <!-- Load CSS files-->
     <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="http://cdn.bootcss.com/bootstrap-datepicker/1.4.0/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
-    <link href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../static/css/plugin/bootstrap/bootstrap-datetimepicker.min.css" rel="stylesheet" th:href="@{/css/plugin/bootstrap/bootstrap-datetimepicker.min.css}"/>   
+    <link href="../static/css/plugin/bootstrap/font-awesome.min.css" rel="stylesheet" th:href="@{/css/plugin/bootstrap/font-awesome.min.css}"/>   
     <link href="../static/css/customer/common.css" rel="stylesheet" th:href="@{/css/customer/common.css}"/>   
     <link href="../static/css/customer/index.css" rel="stylesheet" th:href="@{/css/customer/index.css}"/>   
     <link href="../static/css/customer/app.css" rel="stylesheet" th:href="@{/css/customer/app.css}"/>   
@@ -22,12 +22,26 @@
 			</div>
 		</nav>
 	</header>
-	<div class="col-md-12 all_view">
-		<div class="col-md-3 app_list"><applist></applist></div>
-		<div class="col-md-9 data_ui_view_class" data-ui-view=""></div>
+	<div class="col-sm-12 all_view">
+		<div class="col-sm-3 app_list"><applist></applist></div>
+		<div class="col-sm-9 data_ui_view_class" data-ui-view=""></div>
 	</div>
 	<footer>
-		<div class="footer_div">44444444444444</div>
+		<div class="footer_div">
+			<div class="footer_header col-sm-12">
+				<i class="fa fa-github-alt"></i>
+				<i class="fa fa-envelope-o"></i>
+				<i class="fa fa-info-circle"></i>
+			</div>
+			<div class="col-sm-5">
+				<div class="col-sm-12 git_email_detail">
+					<i class="fa fa-github-alt"></i><a href="https://github.com/Lutreer/25xiaoqu" target="_blank">github.com/Lutreer/25xiaoqu</a>
+				</div>
+				<div class="col-sm-12 git_email_detail">
+					<i class="fa fa-envelope-o"></i>lxuidesigner@gmail.com
+				</div>
+			</div>
+		</div>
 	</footer>
 	<!-- 公共提示框 -->
 	<!-- 此处bs-example-modal-lg modal-lg 样式将模态框设置为大框 ，如果为bs-example-modal-sm modal-sm即为小框-->
@@ -58,6 +72,8 @@
 	<!-- Load plugin js file-->
 	<script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="../static/js/plugin/bootstrap/bootstrap-datetimepicker.min.js" th:src="@{/js/plugin/bootstrap/bootstrap-datetimepicker.min.js}"></script>
+	<script src="../static/js/plugin/bootstrap/bootstrap-datetimepicker.zh-CN.js" th:src="@{/js/plugin/bootstrap/bootstrap-datetimepicker.zh-CN.js}"></script>
 	<script src="../static/js/plugin/angular/angular.js" th:src="@{/js/plugin/angular/angular.js}"></script>
 	<!-- <script src="../static/js/plugin/flatui/flat-ui.min.js" th:src="@{/js/plugin/flatui/flat-ui.min.js}"></script> -->
 	<script src="../static/js/plugin/angular/angular-route.min.js" th:src="@{/js/plugin/angular/angular-route.min.js}"></script>
@@ -69,8 +85,6 @@
 	<script src="../static/js/plugin/angular/angular-file-upload-shim.min.js" th:src="@{/js/plugin/angular/angular-file-upload-shim.min.js}"></script>
 	<script src="../static/js/plugin/angular/angular-file-upload.min.js" th:src="@{/js/plugin/angular/angular-file-upload.min.js}"></script>
 	<script src="../static/js/plugin/angular/angular-base64-upload.min.js" th:src="@{/js/plugin/angular/angular-base64-upload.min.js}"></script>
-	<script src="http://cdn.bootcss.com/bootstrap-datepicker/1.4.0/js/bootstrap-datepicker.min.js"></script>
-	<script src="http://cdn.bootcss.com/bootstrap-datepicker/1.4.0/locales/bootstrap-datepicker.zh-CN.min.js"></script>
 	<!-- Load custom js file -->
 	<script src="../static/js/customer/common/app.js" th:src="@{/js/customer/common/app.js}"></script>
 	<script src="../static/js/customer/common/directive.js" th:src="@{/js/customer/common/directive.js}"></script>

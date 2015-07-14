@@ -14,7 +14,7 @@
 }
 .data_ui_view_class{
 	height:100%;
-	background:#ffffff;
+	background: #ffffff;
 	padding-top:30px;
 	padding-left:50px;
 	padding-right:50px;
@@ -33,7 +33,7 @@
 	padding-bottom:30px;
 	overflow-y:auto;
 	overflow-x:hidden;
-	background:#eff8f3;
+	background-image: url("../../images/applistbg.jpg");
 	word-wrap: break-word;
 	
 	/* scrollbar-face-color: rgba(35, 51, 66, 1);
@@ -50,7 +50,7 @@ footer{
 	height:150px;
 	width:100%;
 	position: fixed;
-	bottom: -130px;
+	bottom: -125px;
 	background:#425066;
 	transition: bottom 1s;
 	-webkit-transition: bottom 1000ms ease-out;
@@ -58,9 +58,27 @@ footer{
 	-webkit-transition: bottom 1s; /* Safari 和 Chrome */
 	-o-transition: bottom 1s; /* Opera */
 }
-.footer_div{
+.footer_header{
 	text-align: center;
 }
 footer:hover{
 	bottom:0px;
+}
+.footer_header i{
+	margin:3px 10px 20px 10px;
+	color:white;
+	font-size: 16px;
+}
+.git_email_detail{
+	color:white;
+	font-size: 16px;
+}
+.git_email_detail i{
+	margin-right:10px;
+	color:white;
+	font-size: 16px;
+}
+.git_email_detail a{
+	color:white;
+	font-size: 16px;
 }

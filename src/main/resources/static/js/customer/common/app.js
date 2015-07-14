@@ -12,7 +12,7 @@ xueyouApp.config(function($stateProvider,$urlRouterProvider){
         }).
         state('cumtLrjExcelData001',{
             url:"/cumtLrjExcelData001",
-            templateUrl:"templates/terminal/terminal-list.html",
+            templateUrl:"templates/cumt/lrj-excel-data.html",
             //controller:'terminalListCtrl'
         });
 });

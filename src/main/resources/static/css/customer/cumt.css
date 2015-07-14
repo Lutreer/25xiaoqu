@@ -1,0 +1,16 @@
+@charset "utf-8";
+.date_div{
+	padding-left:15px !important;
+	padding-right:15px !important;
+}
+.form-group_date{
+	height:34px;
+}
+.random_div{
+	padding:0px;
+}
+.random_f_t{
+	line-height: 34px;
+	text-align: center;
+	font-weight: bold;
+}

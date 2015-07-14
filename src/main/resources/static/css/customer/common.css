@@ -1,5 +1,9 @@
 @charset "utf-8";
 /*常用css*/
+body{
+	font-family: "微软雅黑";
+	margin:0px;
+}
 a{
 	text-decoration: none !important;
 }
@@ -41,4 +45,8 @@ a{
 	/* border-left:1px solid #000000;
 	border-right:1px solid #000000; */
 	min-height: 35px;
+}
+.btn_group{
+	margin-top:50px;
+	text-align: center;
 }
