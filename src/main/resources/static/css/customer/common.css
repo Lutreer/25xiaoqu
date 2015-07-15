@@ -35,8 +35,8 @@ a{
 ::-webkit-scrollbar-thumb {
 	background-color: #eaeaea;
 	background-clip: padding-box;
-	border-left:1px solid #888888;
-	border-right:1px solid #888888;
+	border-left:1px solid #D2D2D2;
+	border-right:1px solid #D2D2D2;
 	min-height: 35px;
 }
 ::-webkit-scrollbar-thumb:hover {

@@ -5,21 +5,24 @@
 </head>
 <body>
 	<div class="col-sm-8">
-		<form action=""  class="form-horizontal">
+		<form action="" method="POST" name="uploadExcelForm" class="form-horizontal" ng-submit="uploadExcel(myFile)" novalidate>
 			<fieldset>
+				<div class="alert alert-danger alert-dismissible" role="alert" ng-show="noFileError">
+					<button type="button" class="close" ng-click="noFileErrorClose()"><span>&times;</span></button>
+					<strong>Warning!</strong> 请选择文件！
+				</div>
 				<div class="form-group form-group_date">
-	                <label for="dtp_input2" class="col-sm-3">修改日期:</label>
-	                <div class="input-group date_div date form_date col-sm-7" data-date="" data-date-format="yyyy MM dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-	                    <input class="form-control" size="16" type="text" value="" readonly>
+	                <label for="dtp_input" class="col-sm-3">修改日期:</label>
+	                <div class="input-group date_div date form_date col-sm-7" id="form_date" data-date="" data-date-format="yyyy-MM-dd" data-link-field="dtp_input" data-link-format="yyyy-mm-dd">
+	                    <input required name="modifyDate" class="form-control" size="16" type="text" ng-model="modifyDate" value="" readonly id="dtp_input" ng-blur="datetimeModel()">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 	                </div>
-					<input type="hidden" id="dtp_input2" value="" /><br/>
 	            </div>
 	            
 	            <div class="form-group">
 	                <label class="col-sm-3">选择文件:</label>
 	                <div class="col-sm-7">
-	                    <input class="form-control" type="file" value="" accept=".xls,.xlsx">
+	                    <input name="myFile" ng-file-select ng-model="myFile" class="form-control" type="file" value="" accept=".xls,.xlsx">
 	                </div>
 	                <div class="clear_float"></div>
 	            </div>
@@ -28,11 +31,11 @@
 	                <label class="col-sm-3">随机数区间:</label>
 	                <div class="col-sm-7 random_div">
 		                <div class="col-sm-5">
-		                    <input class="form-control" type="number" value="" accept="">
+		                    <input required name="randomMin" class="form-control" type="number" value="" accept="" ng-model="randomMin" ng-blur="randomValid()">
 		                </div>
 		                <div class="col-sm-2 random_f_t">~</div>
 		                <div class="col-sm-5">
-		                    <input class="form-control" type="number" value="" accept="">
+		                    <input required name="randomMax" class="form-control" type="number" value="" accept="" ng-model="randomMax" ng-blur="randomValid()">
 		                </div>
 	                </div>
 	                <div class="clear_float"></div>
@@ -40,7 +43,7 @@
 	            
 	            <div class="form-group btn_group">
 	            	<div class="col-sm-offset-3 col-sm-7">
-	            		<button class="btn btn-success col-sm-12"> 开始 </button>
+	            		<button type="submit" ng-disabled="uploadExcelForm.$invalid || randomError" class="btn btn-success col-sm-12"> 开始 </button>
 	            	</div>
 	            </div>
 	        </fieldset>

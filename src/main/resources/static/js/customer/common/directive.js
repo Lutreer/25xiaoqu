@@ -10,17 +10,44 @@ xueyouApp.directive('applist', function () {
     	templateUrl:"templates/commonTemplate/app-list.html"
     };
 });
-/*xueyouApp.directive('footerHeight', function () {
+/*myApp.directive('validFile', function () {
+    return {
+        require: 'ngModel',
+        link: function (scope, el, attrs, ngModel) {
+            ngModel.$render = function () {
+                ngModel.$setViewValue(el.val());
+            };
+
+            el.bind('change', function () {
+                scope.$apply(function () {
+                    ngModel.$render();
+                });
+            });
+        }
+    };
+});*/
+/*xueyouApp.directive('datetimepicker', function () {
 	return {
-		restrict: 'AE',
-		link: function(scope, element, attrs) {
-			element.bind('focus', function() {
-				debugger;
-				var $this = element;
-				$this.height("200px");
-				
+		restrict: 'ngModel',
+		link: function(scope, element, attrs,ngModel) {
+			element.bind('change', function() {
+				debugger
+				 ngModel.$setViewValue($("#dtp_input").val());
             });
     }
   };
-});
-*/
+});*/
+/*xueyouApp.directive('datetimepicker', function() {
+	  return {
+	    require: 'ngModel',
+	    link: function(scope, element, attr, ngModel) {
+	      $(element).datepicker({
+	        onSelect: function(dateText) {
+	          scope.$apply(function() {
+	            ngModel.$setViewValue(dateText);
+	          });
+	        }
+	      });
+	    }
+	  };
+	});*/
