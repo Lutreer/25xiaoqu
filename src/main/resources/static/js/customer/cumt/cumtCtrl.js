@@ -54,7 +54,8 @@ cumtControllers.controller('cumtExcelDataCtrl',['$scope','$upload','cumtExcelDat
                  },
                  fields:{params:JSON.stringify(paramData)},
                  file:myFile
-             }).success(function(data){
+             }).success(function(data,status){
+            	 debugger;
                      /*if(status==200){
                      }else{
                      }*/

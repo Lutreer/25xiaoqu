@@ -7,7 +7,10 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.util.descriptor.web.ErrorPage;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.hateoas.Resource;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.lovemyxiaoqu.cumt.pojo.ErrorPojo;
 import com.lovemyxiaoqu.cumt.pojo.LrjExcelDataPojo;
 
 
@@ -28,21 +32,19 @@ import com.lovemyxiaoqu.cumt.pojo.LrjExcelDataPojo;
 public class CumtController {
 	
 	@RequestMapping(value="/lrjexceldata", method = { RequestMethod.POST })
-	public String index(@RequestParam String params,
+	public ResponseEntity<Object> index(@RequestParam String params,
 			@RequestParam("file") MultipartFile[] files,
 			HttpServletRequest request, HttpServletResponse response) throws IOException{
 	
 		ObjectMapper mapper = new ObjectMapper();  
 		LrjExcelDataPojo param = mapper.readValue(params.toString(), LrjExcelDataPojo.class);  
-		ResponseEntity<Object> responseEntity =  null;
 		
+		ErrorPojo error = new ErrorPojo();
+		error.setCode(22);
+		error.setErrorMessage("success!!!!!!!!");
 		
+		return  new ResponseEntity<Object>(new Resource<ErrorPojo>(error), HttpStatus.OK);
 		
-		response.setContentType("text/plain;charset=UTF-8"); 
-		PrintWriter out = response.getWriter(); 
-		out.print("1`请选择文件后上传"); 
-		out.flush(); 
-		return null;
 	}
 	
 	

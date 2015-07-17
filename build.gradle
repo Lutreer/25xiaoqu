@@ -33,6 +33,7 @@ dependencies {
 	    "org.springframework.boot:spring-boot-starter",
 	    "org.springframework.boot:spring-boot-starter-web",
 	    "com.fasterxml.jackson.core:jackson-core:2.5.4",
+	    "org.springframework.hateoas:spring-hateoas:0.17.0.RELEASE",
 	    "commons-io:commons-io:2.4",
 	    "org.apache.poi:poi-excelant:3.9"
     )
