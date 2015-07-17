@@ -1,16 +1,24 @@
 package com.lovemyxiaoqu.cumt;
 
-import java.util.HashMap;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.lovemyxiaoqu.cumt.pojo.LrjExcelDataPojo;
 
 
 @Controller
@@ -20,15 +28,21 @@ import org.springframework.web.servlet.ModelAndView;
 public class CumtController {
 	
 	@RequestMapping(value="/lrjexceldata", method = { RequestMethod.POST })
-	public ModelAndView index(@RequestParam(value = "modifyDate") String modifyDate,
-			@RequestParam(value = "randomMin") String randomMin,
-			@RequestParam(value = "randomMax") String randomMax,
-			@RequestParam("file") MultipartFile file){
-		HashMap<String,Object> wrapper = new HashMap<String,Object>();
-		wrapper.put("result", true);
-		ModelAndView model = new ModelAndView();
-		model.addAllObjects(wrapper);
-		return model;
+	public String index(@RequestParam String params,
+			@RequestParam("file") MultipartFile[] files,
+			HttpServletRequest request, HttpServletResponse response) throws IOException{
+	
+		ObjectMapper mapper = new ObjectMapper();  
+		LrjExcelDataPojo param = mapper.readValue(params.toString(), LrjExcelDataPojo.class);  
+		ResponseEntity<Object> responseEntity =  null;
+		
+		
+		
+		response.setContentType("text/plain;charset=UTF-8"); 
+		PrintWriter out = response.getWriter(); 
+		out.print("1`请选择文件后上传"); 
+		out.flush(); 
+		return null;
 	}
 	
 	

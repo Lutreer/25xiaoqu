@@ -43,6 +43,8 @@ cumtControllers.controller('cumtExcelDataCtrl',['$scope','$upload','cumtExcelDat
 	 */
 	 $scope.uploadExcel=function(myFile){
 		 $scope.noFileError=false;
+		 
+		 var paramData={modifyDate:$scope.modifyDate,randomMin:$scope.randomMin,randomMax:$scope.randomMax};
          if(myFile!=null){
              $scope.upload=$upload.upload({
                  url:'/cumt/lrjexceldata',
@@ -50,12 +52,12 @@ cumtControllers.controller('cumtExcelDataCtrl',['$scope','$upload','cumtExcelDat
                  header:{
                      "Content-Type":"multipart/form-data"
                  },
-                 fields: {modifyDate:$scope.modifyDate,randomMin:$scope.randomMin,randomMax:$scope.randomMax},
-                 file:myFile[0]
-             }).success(function(data,status){
-                     if(status==200){
+                 fields:{params:JSON.stringify(paramData)},
+                 file:myFile
+             }).success(function(data){
+                     /*if(status==200){
                      }else{
-                     }
+                     }*/
                  }).error(function(data){
                  })
          }else{
