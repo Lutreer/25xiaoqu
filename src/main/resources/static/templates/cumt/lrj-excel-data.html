@@ -5,7 +5,7 @@
 </head>
 <body>
 	<div class="col-sm-8">
-		<form action="/cumt/lrjexceldata" method="POST" name="uploadExcelForm" class="form-horizontal"  novalidate>
+		<form action="" method="POST" name="uploadExcelForm" class="form-horizontal" ng-submit="uploadExcel(myFile)" novalidate>
 			<fieldset>
 				<div class="alert alert-danger alert-dismissible" role="alert" ng-show="noFileError">
 					<button type="button" class="close" ng-click="noFileErrorClose()"><span>&times;</span></button>
