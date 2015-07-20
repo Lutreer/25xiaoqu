@@ -1,27 +1,29 @@
 package com.lovemyxiaoqu.cumt.pojo;
 
-import java.io.File;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown=true)
 public class LrjExcelDataPojo {
-
+	
+	@JsonProperty("modifyDate")
 	private String modifyDate;
-	private String randomMin;
-	private String randomMax;
+	
+	@JsonProperty("randomMin")
+	private Float randomMin;
+	
+	@JsonProperty("randomMax")
+	private Float randomMax;
 	
 	
-	public String getRandomMin() {
+	public Float getRandomMin() {
 		return randomMin;
 	}
-	public void setRandomMin(String randomMin) {
+	public void setRandomMin(Float randomMin) {
 		this.randomMin = randomMin;
 	}
-	public String getRandomMax() {
+	public Float getRandomMax() {
 		return randomMax;
 	}
-	public void setRandomMax(String randomMax) {
+	public void setRandomMax(Float randomMax) {
 		this.randomMax = randomMax;
 	}
 

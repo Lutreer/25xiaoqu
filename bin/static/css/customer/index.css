@@ -33,7 +33,7 @@
 	padding-bottom:30px;
 	overflow-y:auto;
 	overflow-x:hidden;
-	background-image: url("../../images/applistbg.jpg");
+	/* background-image: url("../../images/applistbg.jpg"); */
 	word-wrap: break-word;
 	
 	/* scrollbar-face-color: rgba(35, 51, 66, 1);
