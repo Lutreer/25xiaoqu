@@ -14,11 +14,20 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: "war"
 
 jar {
-    baseName = '25xiaoqu'
+    baseName = 'studyfriend'
     version =  '0.1.0'
 }
+war{  
+    baseName ="studyfriend"  
+}  
+//定义目录结构  
+sourceSets {main {  
+    java {srcDirs = ['src/cmes/java']}  
+    resources {srcDirs = ['src/cmes/resources']}  
+}} 
 
 repositories {
     maven { url "http://repo.spring.io/snapshot" }
